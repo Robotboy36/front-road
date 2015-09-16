@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>单行与多行文本的溢出</title>
+		<style>
+			.box{
+				width:300px; border:1px solid #aaa;
+				margin:0 auto;
+			}
+			
+			/* 单行溢出 */
+			.title{
+				overflow: hidden;
+				text-overflow: ellipsis;
+				white-space: nowrap;
+			}
+			
+			/* 多行溢出 */
+			.info{
+				overflow: hidden;
+				text-overflow: ellipsis;
+				word-break: break-all;
+				
+				display:-webkit-box;
+				-webkit-box-orient:vertical;
+				-webkit-line-clamp: 4;
+			}
+			
+		</style>
+	</head>
+	<body>
+		
+		<div class="box">
+			
+			<h2 class="title">客户第一，团队合作，拥抱变化，城市，敬业，激情</h2>
+			
+			<div class="info">
+				你是我的小呀小苹果，怎么爱你都不嫌多，红红的小脸温暖我的心窝，点亮我声明的火，火火火
+				你是我的小呀小苹果，怎么爱你都不嫌多，红红的小脸温暖我的心窝，点亮我声明的火，火火火
+				你是我的小呀小苹果，怎么爱你都不嫌多，红红的小脸温暖我的心窝，点亮我声明的火，火火火
+				你是我的小呀小苹果，怎么爱你都不嫌多，红红的小脸温暖我的心窝，点亮我声明的火，火火火
+				你是我的小呀小苹果，怎么爱你都不嫌多，红红的小脸温暖我的心窝，点亮我声明的火，火火火
+			</div>
+		</div>
+		
+	</body>
+</html>
