@@ -1,0 +1,13 @@
+RequireJS（按需加载，移动端上可以不打包，善用304缓存，腾讯搞出一个更牛叉的增量更新加载器MT，也可以试试）
++Backbone（组织代码与路由管理）
++Zepto（轻量DOM操作） 
++fastclick.js（点击穿透与延迟处理）
++Hammer.js（各种触屏事件）
++iScroll5.js（滚动条处理）
++Animate.css（CSS3动画）
++Enquire.js（处理响应式布局）。
+
+可见移动端每个部件都烂到蕊了，每个部件都需要专门的工具进行修复。移动端是非常注重体验的，每一个小角落都存在着各种动画，但浏览器或自带的WebView都很差劲，于是Native与Hybird的话题才一直这么火。有的人说，既然DOM最吃性能，那么就干脆用Canvas来代替吧（请见：http://zhuanlan.zhihu.com/FrontendMagazine/19967854 与http://www.ruanyifeng.com/blog/2015/02/future-of-dom.html ）。Facebook也推出了自己类似的方案React Native，自己实现了一套GUI，不过编写语言是JavaScript。它是使用自己原来的超高性能轮子React实现的。这或者是一条道路。但优缺点也明显，正如Angular浓浓的Java风，React是在逻辑中插入大段标签语言（JSX）。同时React的排它性也非常强，很难与其它库搭配使用。同时，我们可以看到，出自jQuery名门的jQuery Mobile并没有入围，那个性能太糟了，连Sencha Touch也不及。上面说的只是核心库， 还没有搬出UI库呢。号称Mobile First的UI库不在少数，由于无视IE，可以大胆使用CSS3。
+
+目前比较出彩的有Foundation、Semantic，Refill、Ratchet。
+如果只是想运行在平板上，性能问题就不会那么拮据了，我们还可以试试inoic、Sencha Touch， Kendo UI Mobile……

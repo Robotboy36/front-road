@@ -1,0 +1,262 @@
+
+@import "mixin";
+
+
+$themeColor: #58BAC9;
+$topHeight: 50px;
+
+@font-face{
+    font-family: "hyqh";
+    src:url('../font/HYQiHeiX1-35W.otf') format("otf");// format('truetype');HYQiHei-35S.otf
+}
+
+
+html{
+    font-size:62.5%;
+    -ms-text-size-adjust:none;
+    -webkit-text-size-adjust:none;
+    text-size-adjust:none;
+}
+*{font-family: "hyqh","Helvetica Neue", Helvetica, STHeiTi;}
+html,body{height:100%; width:100%;}
+html,body,ul,p,h1,h2,h3,h4,h5,h6{margin:0;padding:0; font-weight:normal;}
+a{text-decoration:none;}
+img,button{border:none;}
+input:focus,button:focus{outline:none;}
+i,s,b,em,address{font-style:normal;}
+ul{list-style: none;}
+body{background:#eee;}
+// 文本溢出
+.txtflow{ overflow: hidden; text-overflow: ellipsis;white-space: nowrap; }
+.clear{display: block;height:0;width:100%; clear: both;}
+//蒙版
+.rgba{
+    width:100%; height:100%;
+    position:fixed; z-index: 9;
+    background:rgba(0,0,0,0.4); 
+    display: none;
+}
+.abs{
+    position:absolute;top:0;left:0;bottom:0;right:0;
+    margin:auto;
+}
+.line{
+    display: block;border:none; border-bottom:1px solid #ccc;
+    height:0; width:100%;margin:0;padding:0;
+}
+
+// 容器
+.container{
+    position:relative; height:100%;
+//  overflow: hidden;
+}
+// 页面
+.page{ 
+    @extend .abs;
+    padding-top:$topHeight;
+    padding-bottom:$topHeight;
+//  overflow-y:scroll; 
+    background:#fff;  
+    &:after{
+        content:'';
+        @extend .clear;
+    }
+}
+
+
+// 头部
+.header{
+	height:$topHeight; line-height:$topHeight; width:100%;  text-align:center;
+	background:rgba(255,255,255,0.9); position:fixed; top:0; color:#222; z-index: 100; 
+	border-bottom:1px solid #ddd;
+	.title{
+	    font-size:1.8rem; transition: all .3s; width:200px; @extend .txtflow;
+	    margin:0 auto;
+	}
+
+	.back,.search,.download{
+		display: block; position:absolute; top:0; bottom:0;font-size:1.6rem; color:#fff;
+		width:40px; background: no-repeat 10px center; background-size:auto 35px;
+	}
+	.back{left:0; 
+       background-image: url(../img/logo.jpg);
+	}
+	.back-arrow{
+	   background-size:auto 20px;
+	   background-image: url(../img/arrow-left-blank.png);
+    }
+	.search{right:0; 
+//	   background-image: url(../img/search.png);
+	}
+	.download{
+	    background-image: url(../img/download.png);
+	    width:50px; right:2px; background-size:35px auto;
+	}
+}
+
+.blank{
+//  color:#fff;border:none;
+//  background-color:rgba(0,0,0,0.9);
+    .back{
+        background-size:auto 20px;
+        background-image:url(../img/arrow-left-blank.png);
+    }
+}
+
+// 底部
+.footer{
+	height:30px; line-height:30px; width:100%;
+	position:fixed; bottom:5px; z-index: 100;
+	
+	section{
+	   width:90%; margin:0 auto;
+	   text-align:center;
+	   overflow: hidden;
+	   
+	   display:-webkit-box;
+	   display:-webkit-flex;
+       display:flex;
+       
+       -webkit-box-pack: center;
+       -webkit-justify-content: center;
+       justify-content: center;
+       flex-direction: row;
+	}	
+	span{ 
+	   display:block; margin-right:5px;
+	   background:$themeColor;color:#fff; 
+	   height:30px; font-size:1.5rem;
+       -webkit-box-flex: 1;
+       -webkit-flex: 1;
+	   flex: 1;
+	}
+	span:first-child{border-radius:15px 0 0 15px;}
+	span:last-child{border-radius:0 15px 15px 0; margin:0;}
+}
+
+// 无数据
+.no-data{
+    padding-top:160px; padding-bottom:20px;font-size:1.5rem;
+    border-top:1px solid #ddd; text-align: center;color:#666;
+    background:#fff url(../img/no-data.jpg) no-repeat center 20px;
+}
+
+
+//加载中
+$loadSize: 150px;
+.loading-remind{
+    @extend .abs; position: fixed; z-index: 19; display: none;
+    width:$loadSize; height:$loadSize;
+    .loading{
+        width:$loadSize; height:$loadSize; margin:0 auto; position:relative;
+        z-index: 20;
+    }
+    p{ font-size:2.5rem;color:#1e1f2f; text-align: center;}
+}
+.ball-spin-fade-loader {
+    position: absolute;
+    top: 45%;left: 45%;
+}
+
+@-webkit-keyframes ball-spin-fade-loader {
+  50% {
+    opacity: 0.3;
+    -webkit-transform: scale(0.4);
+            transform: scale(0.4); }
+
+  100% {
+    opacity: 1;
+    -webkit-transform: scale(1);
+            transform: scale(1); } }
+
+@keyframes ball-spin-fade-loader {
+  50% {
+    opacity: 0.3;
+    -webkit-transform: scale(0.4);
+            transform: scale(0.4); }
+
+  100% {
+    opacity: 1;
+    -webkit-transform: scale(1);
+            transform: scale(1); } 
+}
+
+.ball-spin-fade-loader > div:nth-child(1) {
+    top: 25px;
+    left: 0;
+    -webkit-animation: ball-spin-fade-loader 1s 0s infinite linear;
+            animation: ball-spin-fade-loader 1s 0s infinite linear; 
+}
+.ball-spin-fade-loader > div:nth-child(2) {
+    top: 17.04545px;
+    left: 17.04545px;
+    -webkit-animation: ball-spin-fade-loader 1s 0.12s infinite linear;
+            animation: ball-spin-fade-loader 1s 0.12s infinite linear; 
+}
+.ball-spin-fade-loader > div:nth-child(3) {
+    top: 0;
+    left: 25px;
+    -webkit-animation: ball-spin-fade-loader 1s 0.24s infinite linear;
+            animation: ball-spin-fade-loader 1s 0.24s infinite linear; 
+}
+.ball-spin-fade-loader > div:nth-child(4) {
+    top: -17.04545px;
+    left: 17.04545px;
+    -webkit-animation: ball-spin-fade-loader 1s 0.36s infinite linear;
+            animation: ball-spin-fade-loader 1s 0.36s infinite linear; 
+}
+.ball-spin-fade-loader > div:nth-child(5) {
+    top: -25px;
+    left: 0;
+    -webkit-animation: ball-spin-fade-loader 1s 0.48s infinite linear;
+            animation: ball-spin-fade-loader 1s 0.48s infinite linear; 
+}
+.ball-spin-fade-loader > div:nth-child(6) {
+    top: -17.04545px;
+    left: -17.04545px;
+    -webkit-animation: ball-spin-fade-loader 1s 0.6s infinite linear;
+            animation: ball-spin-fade-loader 1s 0.6s infinite linear; 
+}
+.ball-spin-fade-loader > div:nth-child(7) {
+    top: 0;
+    left: -25px;
+    -webkit-animation: ball-spin-fade-loader 1s 0.72s infinite linear;
+            animation: ball-spin-fade-loader 1s 0.72s infinite linear; 
+}
+.ball-spin-fade-loader > div:nth-child(8) {
+    top: 17.04545px;
+    left: -17.04545px;
+    -webkit-animation: ball-spin-fade-loader 1s 0.84s infinite linear;
+            animation: ball-spin-fade-loader 1s 0.84s infinite linear; 
+}
+.ball-spin-fade-loader > div {
+    background-color: $themeColor;
+    width: 15px;
+    height: 15px;
+    border-radius: 100%;
+    margin: 2px;
+//  @include boxshadow(0,0,5px,#fff);
+    border:1px solid #fff;
+    -webkit-animation-fill-mode: both;
+            animation-fill-mode: both;
+    position: absolute; 
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
