@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style>
+		
+			.container,.title{
+				width:600px;margin:0 auto;
+				display: -webkit-flex;
+				background:#eee; box-shadow: 0 0 7px #ddd;
+			}
+			.title h2{flex: 1; margin-right:20px;}
+			
+			.item{
+				background:#fff; padding:0;margin:0;
+				flex: 1; list-style: none;
+			}
+			.item1{margin-right:20px;}
+			.item li{
+				height:60px; line-height: 60px; position:relative;
+				padding-left:20px;
+			}
+			.item1 li{ border-top:1px solid #aaa; }
+			.item1 li:first-child{border:none;}
+			
+			.item2 li+li:before{
+				content: "";
+				position:absolute;
+				left:0;width:100%;
+				top:-1px; height:1px;
+				border-top:1px solid #aaa;
+				-webkit-transform: scaleY(0.5);
+			}
+		
+		</style>
+	</head>
+	<body>
+		
+		
+		<div class="title">
+			<h2>未处理</h2>
+			<h2>已处理</h2>
+		</div>
+		
+		<div class="container">			
+			<ul class="item item1">
+				<li>情深深雨蒙蒙</li>
+				<li>青山绿水</li>
+				<li>团队合作</li>
+				<li>拥抱变化</li>
+				<li>诚信激情</li>
+			</ul>
+			
+			<ul class="item item2">
+				<li>情深深雨蒙蒙</li>
+				<li>青山绿水</li>
+				<li>团队合作</li>
+				<li>拥抱变化</li>
+				<li>诚信激情</li>
+			</ul>
+		</div>
+		
+		
+	</body>
+</html>

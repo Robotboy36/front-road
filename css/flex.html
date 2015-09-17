@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>flex实例</title>
+		<style>
+			*{font-family: "微软雅黑";}
+			html,body{margin:0;padding:0;}
+			h2{font-size:20px;}
+			h3{font-size:18px;font-weight: normal;}
+			.box{
+				padding:20px;
+				border-bottom:1px dashed #aaa;
+			}
+			.box:after{
+				content:"";
+				display:block;
+				width:100%;line-height: 1px; clear: both;
+			}
+			.demo{
+				background:#f1f1f1;padding:5px; box-sizing: border-box;
+				box-shadow: 5px 5px 10px #ddd; margin-right:5%;
+				margin-bottom:10px; width:45%; float:left;
+			}
+			.container{
+				display:-webkit-flex;
+				display:flex;
+			}
+			.container div:nth-child(1){background:#D8614C;}
+			.container div:nth-child(2){background:#43BBD2;}
+			.container div:nth-child(3){background:#6EC342;}
+			.container div{ 
+				min-height:50px;color:#fff; text-align: center;
+				line-height: 50px; background:#006699;
+			}
+			
+			.item{
+				width:100px; margin:0 10px 10px 0;
+			}
+		</style>
+	</head>
+	<body>
+		
+		<div class="box">
+			<h2>[flex] 弹性盒模型布局</h2>			
+			<div class="demo">
+				<h3>display:-webkit-flex;</h3>
+				<div class="container">
+					<div style="width: 100px;">100px</div>
+					<div style="flex: 2;">flex: 2;</div>
+					<div style="flex: 1;">flex: 1;</div>
+				</div>
+			</div>			
+			<div class="demo">
+				<h3>display:-webkit-flex;</h3>
+				<div class="container">
+					<div style="width: 150px;margin-right:10px;">150px,mright=10</div>
+					<div style="flex: 1;">flex: 1;</div>
+					<div style="width: 150px;margin-left:10px;">150px,mleft=10</div>
+				</div>
+			</div>					
+		</div>
+		
+		
+		<div class="box">
+			<h2>[ flex-direction ] 元素开始方向</h2>			
+			<div class="demo">
+				<h3>display:-webkit-flex;</h3>
+				<h3>flex-direction:row /* defalut */;</h3>
+				<div class="container" style="flex-direction:row;">
+					<div style="flex: 3;">flex: 3;</div>
+					<div style="flex: 2;">flex: 2;</div>
+					<div style="flex: 1;">flex: 1;</div>
+				</div>
+			</div>			
+			<div class="demo">
+				<h3>display:-webkit-flex;</h3>
+				<h3>flex-direction:row-reverse;</h3>
+				<div class="container" style="flex-direction:row-reverse;">
+					<div style="flex: 3;">flex: 3;</div>
+					<div style="flex: 2;">flex: 2;</div>
+					<div style="flex: 1;">flex: 1;</div>
+				</div>
+			</div>			
+			<div class="demo">
+				<h3>display:-webkit-flex;</h3>
+				<h3>flex-direction:column;</h3>
+				<div class="container" style="flex-direction:column;">
+					<div style="flex: 3;">flex: 3;</div>
+					<div style="flex: 2;">flex: 2;</div>
+					<div style="flex: 1;">flex: 1;</div>
+				</div>
+			</div>	
+			<div class="demo">
+				<h3>display:-webkit-flex;</h3>
+				<h3>flex-direction:column-reverse;</h3>
+				<div class="container" style="flex-direction:column-reverse;">
+					<div style="flex: 3;">flex: 3;</div>
+					<div style="flex: 2;">flex: 2;</div>
+					<div style="flex: 1;">flex: 1;</div>
+				</div>
+			</div>			
+		</div>
+		
+		<!-- 是否换行 -->
+		<div class="box">
+			<h2>[ flex-wrap ] 元素是否换行</h2>			
+			<div class="demo">
+				<h3>display:-webkit-flex;</h3>
+				<h3>flex-wrap:nowrap; /* default */</h3>
+				<div class="container" style="-webkit-flex-wrap:nowrap; border:1px dashed #666;">
+					<div style="width: 100px;">100px</div>
+					<div style="width: 200px;">200px</div>
+					<div style="width: 300px;">300px</div>
+				</div>
+			</div>			
+			<div class="demo">
+				<h3>display:-webkit-flex;</h3>
+				<h3>flex-wrap:wrap; </h3>
+				<div class="container" style="-webkit-flex-wrap:wrap;border:1px dashed #666;">
+					<div style="width: 100px;">100px</div>
+					<div style="width: 200px;">200px</div>
+					<div style="width: 300px;">300px</div>
+				</div>
+			</div>						
+		</div>
+		
+		<!-- 横向排版 -->
+		<div class="box">
+			<h2>[ justify-content ] 元素横向排版</h2>			
+			<div class="demo">
+				<h3>display:-webkit-flex;</h3>
+				<h3>justify-content:flex-start; /* default */</h3>
+				<div class="container" style="justify-content:flex-start; border:1px dashed #666;">
+					<div style="width: 100px;">100px</div>
+					<div style="width: 200px;">200px</div>
+				</div>
+			</div>			
+			<div class="demo">
+				<h3>display:-webkit-flex;</h3>
+				<h3>justify-content:flex-end; </h3>
+				<div class="container" style="justify-content:flex-end; border:1px dashed #666;">
+					<div style="width: 100px;">100px</div>
+					<div style="width: 200px;">200px</div>
+				</div>
+			</div>		
+			<div class="demo">
+				<h3>display:-webkit-flex;</h3>
+				<h3>justify-content:center; </h3>
+				<div class="container" style="justify-content:center; border:1px dashed #666;">
+					<div style="width: 100px;">100px</div>
+					<div style="width: 200px;">200px</div>
+				</div>
+			</div>			
+			<div class="demo">
+				<h3>display:-webkit-flex;</h3>
+				<h3>justify-content:space-between; /* default */</h3>
+				<div class="container" style="justify-content:space-between; border:1px dashed #666;">
+					<div style="width: 100px;">100px</div>
+					<div style="width: 200px;">200px</div>
+				</div>
+			</div>		
+			<div class="demo">
+				<h3>display:-webkit-flex;</h3>
+				<h3>justify-content:space-around; /* default */</h3>
+				<div class="container" style="justify-content:space-around; border:1px dashed #666;">
+					<div style="width: 100px;">100px</div>
+					<div style="width: 200px;">200px</div>
+				</div>
+			</div>		
+		</div>
+		
+		<!-- 纵向排版 -->
+		<div class="box">
+			<h2>[ align-self ] 元素纵向排版，用在子元素上</h2>	
+			<div class="demo">
+				<h3>display:-webkit-flex;</h3>
+				<div class="container" style="height:200px; border:1px dashed #666;">
+					<div style="flex:1;align-self: flex-start;">align-self: flex-start;</div>
+					<div style="flex:1;align-self: center;">align-self: center;</div>
+					<div style="flex:1;align-self: flex-end;">align-self: flex-end;</div>
+				</div>
+			</div>	
+			<div class="demo">
+				<h3>&nbsp;</h3>
+				<div class="container" style="height:200px; border:1px dashed #666;">
+					<div style="flex:1;align-self:auto;">align-self:auto; /*default*/</div>
+					<div style="flex:1;align-self: baseline;">align-self: baseline;</div>
+					<div style="flex:1;align-self: stretch;">align-self: stretch;</div>
+				</div>
+			</div>		
+		</div>
+		
+		
+		<div class="box">
+			<h2>[ align-items ] 元素纵向排版，用在父元素上</h2>	
+			<div class="demo">
+				<h3>align-items:flex-start;</h3>
+				<div class="container" style="height:200px; border:1px dashed #666;align-items:flex-start">
+					<div style="flex:1;">1</div>
+					<div style="flex:1;">2</div>
+					<div style="flex:1;">3</div>
+				</div>
+			</div>	
+			<div class="demo">
+				<h3>align-items:center;</h3>
+				<div class="container" style="height:200px; border:1px dashed #666;align-items:center">
+					<div style="flex:1;">1</div>
+					<div style="flex:1;">2</div>
+					<div style="flex:1;">3</div>
+				</div>
+			</div>	
+			<div class="demo">
+				<h3>align-items:flex-end;</h3>
+				<div class="container" style="height:200px; border:1px dashed #666;align-items:flex-end">
+					<div style="flex:1;">1</div>
+					<div style="flex:1;">2</div>
+					<div style="flex:1;">3</div>
+				</div>
+			</div>	
+			<div class="demo">
+				<h3>混合使用</h3>
+				<div class="container" style="height:200px; border:1px dashed #666;align-items:flex-end">
+					<div style="flex:1;">1</div>
+					<div style="flex:1; align-self:center">2 align-self:center</div>
+					<div style="flex:1;">3</div>
+				</div>
+			</div>	
+		</div>
+		
+		
+		<div class="box">
+			<h2>[ align-content ] 元素分布排版</h2>	
+			<div class="demo">
+				<h3 style="color:red">与 align-items:flex-start; 对比</h3>
+				<div class="container" style="height:300px; border:1px dashed #666;align-items:flex-start; flex-wrap: wrap;">
+					<div class="item">1</div>
+					<div class="item">2</div>
+					<div class="item">3</div>
+					<div class="item">4</div>
+					<div class="item">5</div>
+					<div class="item">6</div>
+					<div class="item">7</div>
+					<div class="item">8</div>
+					<div class="item">9</div>
+					<div class="item">10</div>
+					<div class="item">11</div>
+				</div>
+			</div>	
+			<div class="demo">
+				<h3>align-content:flex-start;</h3>
+				<div class="container" style="height:300px; border:1px dashed #666;align-content:flex-start; flex-wrap: wrap;">
+					<div class="item">1</div>
+					<div class="item">2</div>
+					<div class="item">3</div>
+					<div class="item">4</div>
+					<div class="item">5</div>
+					<div class="item">6</div>
+					<div class="item">7</div>
+					<div class="item">8</div>
+					<div class="item">9</div>
+					<div class="item">10</div>
+					<div class="item">11</div>
+				</div>
+			</div>
+			<div class="demo">
+				<h3>align-content:center;</h3>
+				<div class="container" style="height:300px; border:1px dashed #666;align-content:center; flex-wrap: wrap;">
+					<div class="item">1</div>
+					<div class="item">2</div>
+					<div class="item">3</div>
+					<div class="item">4</div>
+					<div class="item">5</div>
+					<div class="item">6</div>
+					<div class="item">7</div>
+					<div class="item">8</div>
+					<div class="item">9</div>
+					<div class="item">10</div>
+					<div class="item">11</div>
+				</div>
+			</div>	
+			<div class="demo">
+				<h3>align-content:flex-end;</h3>
+				<div class="container" style="height:300px; border:1px dashed #666;align-content:flex-end; flex-wrap: wrap;">
+					<div class="item">1</div>
+					<div class="item">2</div>
+					<div class="item">3</div>
+					<div class="item">4</div>
+					<div class="item">5</div>
+					<div class="item">6</div>
+					<div class="item">7</div>
+					<div class="item">8</div>
+					<div class="item">9</div>
+					<div class="item">10</div>
+					<div class="item">11</div>
+				</div>
+			</div>	
+			
+			<div class="demo">
+				<h3>align-content:stretch;</h3>
+				<div class="container" style="height:300px; border:1px dashed #666;align-content:stretch; flex-wrap: wrap;">
+					<div class="item">1</div>
+					<div class="item">2</div>
+					<div class="item">3</div>
+					<div class="item">4</div>
+					<div class="item">5</div>
+					<div class="item">6</div>
+					<div class="item">7</div>
+					<div class="item">8</div>
+					<div class="item">9</div>
+					<div class="item">10</div>
+					<div class="item">11</div>
+				</div>
+			</div>	
+		</div>
+		
+		
+		<!-- 排序 -->
+		<div class="box">
+			<h2>[ order ] 元素排序控制,值越小越靠前</h2>	
+			<div class="demo">
+				<h3>order:num;</h3>
+				<div class="container" style="height:200px; border:1px dashed #666;">
+					<div class="item" style="order: 1;">1 order:1;</div>
+					<div class="item" style="order: 0;">2 order:0;</div>
+					<div class="item" style="order: -1;">3 order:-1;</div>
+					<div class="item">4</div>
+					<div class="item">5</div>
+				</div>
+			</div>	
+	</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
