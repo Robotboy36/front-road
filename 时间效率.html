@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		
+		<script>
+			
+			console.time( "test" );
+			
+			var sum = 1;
+			for( var i=0; i<10000; i++ ){
+				sum *= i;
+			}
+			
+			console.timeEnd( "test" );
+		</script>
+		
+		
+	</body>
+</html>
