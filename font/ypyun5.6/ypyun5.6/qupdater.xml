@@ -1,0 +1,12 @@
+﻿<update>
+<descriptions>
+<description>请务必检查下自己的积分对不对。 现在网站的网址是www.ypyun.com</description>
+<description>一片云5.2.2更新了取码的有特殊符号的漏洞</description>
+<description>\n</description>
+</descriptions>
+<files>
+
+<file ver="5.6" path="一片云.exe"/>
+<file ver="5.6" path="qupdater.ini"/>
+</files>
+</update>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>css3计数器</title>
+		<style>
+			body{
+				margin:0;font-family: "微软雅黑";
+				counter-reset: test;
+			}
+			section{
+				width:800px; margin:20px auto 0 auto;background:#eee;
+			}
+			
+			section h2{
+				line-height:40px; padding-left:220px;
+				counter-increment: test; position:relative;
+			}
+			section h2:after{
+				content:"[高手进阶之"counter(test)"]";
+				position:absolute;left:0;
+				padding:0 10px;
+				height:40px; background:green;color:#fff;
+			}
+			
+			/* 目前仅火狐支持 */
+			-moz-document url-prefix(){
+				section h2:after{
+				content:"[高手进阶之"counter(test, simp-chinese-formal)"]";
+			}
+			}
+			
+			section ul{
+				counter-reset: li;
+				list-style: none;
+			}
+			section li:before{
+				counter-increment:li;
+				content:counters(li,".")" ";
+			}
+			
+			/*
+			 * 父元素上定义
+			 * 增量设定在元素本身
+			 * 在伪元素上调用
+			 * 
+			 * */
+			
+		</style>
+	</head>
+	<body>
+		
+		<section>
+			<h2>登记个人信息</h2>
+			<ul>
+				<li>神奇的网站</li>
+				<li>神奇的网站22</li>
+				<li>神奇的网站333</li>
+				<li>
+					<ul>
+						<li>再次神奇</li>
+						<li>再次神奇22</li>
+						<li>再次神奇333</li>
+					</ul>
+				</li>
+				<li>神奇的网站444</li>
+			</ul>
+		</section>
+		
+		<section>
+			<h2>熟悉课程出品流程</h2>
+		</section>
+	</body>
+</html>
