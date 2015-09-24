@@ -23,8 +23,11 @@
 				margin-bottom:10px; width:45%; float:left;
 			}
 			.container{
-				display:-webkit-flex;
-				display:flex;
+				display: -webkit-box;
+				display: -moz-box;
+				display: -ms-flexbox;
+				display: -webkit-flex;
+				display: flex;
 			}
 			.container div:nth-child(1){background:#D8614C;}
 			.container div:nth-child(2){background:#43BBD2;}
@@ -45,7 +48,7 @@
 			<h2>[flex] 弹性盒模型布局</h2>			
 			<div class="demo">
 				<h3>display:-webkit-flex;</h3>
-				<div class="container">
+				<div class="container" style="flex-direction:row;">
 					<div style="width: 100px;">100px</div>
 					<div style="flex: 2;">flex: 2;</div>
 					<div style="flex: 1;">flex: 1;</div>

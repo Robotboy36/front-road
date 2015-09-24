@@ -1,0 +1,103 @@
+
+
+
+@mixin transition( $name, $time ){
+    -webkit-transition: $name $time;
+    -moz-transition: $name $time;
+    -ms-transition: $name $time;
+    -o-transition: $name $time;
+    -khtml-transition: $name $time;
+    transition: $name $time;
+}
+
+
+//文字阴影
+@mixin txtshadow($x, $y, $len, $color){
+    -webkit-text-shadow:$x $y $len $color;
+    -khtml-text-shadow:$x $y $len $color;
+    -moz-text-shadow:$x $y $len $color;
+    -ms-text-shadow:$x $y $len $color;
+    -o-text-shadow:$x $y $len $color;
+    text-shadow:$x $y $len $color;
+}
+
+
+//盒子阴影
+@mixin boxshadow($x, $y, $len, $color){
+    -webkit-box-shadow:$x $y $len 0 $color;
+    -khtml-box-shadow:$x $y $len 0 $color;
+    -moz-box-shadow:$x $y $len 0 $color;
+    -ms-box-shadow:$x $y $len 0 $color;
+    -o-box-shadow:$x $y $len 0 $color;
+    box-shadow:$x $y $len 0 $color;
+}
+
+//文字描边
+@mixin textStroke($size, $color){
+    -webkit-text-stroke:$size $color;
+    -khtml-text-stroke:$size $color;
+    -moz-text-stroke:$size $color;
+    -ms-text-stroke:$size $color;
+    -o-text-stroke:$size $color;
+    text-stroke:$size $color;
+}
+
+
+// 使用动画
+@mixin animate($aname:null, $time:5s, $count:infinite, $way:linear, $delay: 0s){
+    -webkit-animation: $aname $time $way $delay $count;
+    -khtml-animation: $aname $time $way $delay $count;
+    -moz-animation: $aname $time $way $delay $count;
+    -ms-animation: $aname $time $way $delay $count;
+    -o-animation: $aname $time $way $delay $count;
+    animation: $aname $time $way $delay $count;
+}
+
+
+
+//定义动画
+@mixin keyframes( $name, $from, $to, $fromname:transform ){
+    @-webkit-keyframes #{$name} {
+        from{ #{$fromname}: $from;} to{ #{$fromname}:$to;} 
+    }
+    @-moz-keyframes #{$name} {
+        from{ #{$fromname}: $from;} to{ #{$fromname}:$to;} 
+    }
+    @-ms-keyframes #{$name} {
+        from{ #{$fromname}: $from;} to{ #{$fromname}:$to;} 
+    }
+    @-o-keyframes #{$name} {
+        from{ #{$fromname}: $from;} to{ #{$fromname}:$to;} 
+    }
+    @keyframes #{$name} {
+        from{ #{$fromname}: $from;} to{ #{$fromname}:$to;} 
+    }
+}
+
+//弹性盒模型
+@mixin flex{
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+}
+
+//线性背景
+@mixin linearGradient( $startPos, $colorBegin, $colorEnd ){
+    background-image: -webkit-linear-gradient($startPos,$colorBegin, $colorEnd);
+    background-image: -moz-linear-gradient($startPos,$colorBegin, $colorEnd);
+    background-image: -ms-linear-gradient($startPos,$colorBegin, $colorEnd);
+    background-image: -o-linear-gradient($startPos,$colorBegin, $colorEnd);
+    background-image: linear-gradient($startPos,$colorBegin, $colorEnd);
+}
+
+
+
+
+
+
+
+
+
+

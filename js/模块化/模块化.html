@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		
+		<script type="text/javascript" src="js/sea.js" ></script>
+		
+		<script>
+			
+			//调用模块
+			seajs.use( "./js/a.js", function( ex ){
+				
+				ex.print();
+				
+			});
+			
+		</script>
+		
+	</body>
+</html>
