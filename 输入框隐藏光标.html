@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<div style="padding:100px; position:relative;">
+			<input id="txt_1" style="position:absolute;top:10px;left:10px; width:100px;height:30px; z-index:2; border:1px solid green; opacity:0;filter:alpha(opacity:0);">
+			<input id="txt_2" style="position:absolute;top:10px;left:10px; width:100px;height:30px; z-index:1; border:1px solid red;overflow:hidden;" />
+		</div>
+
+		<script>
+			var txt_1 = document.getElementById("txt_1"),txt_2 = document.getElementById("txt_2");
+
+//			function catchTxt(frag) {
+//				if (frag) {
+//					arguments.callee.timer = setInterval(function() {
+//						txt_2.value = txt_1.value;
+//					}, 200);
+//				} else {
+//					clearInterval(arguments.callee.timer);
+//				}
+//			}
+//			txt_1.onfocus = function() {
+//				catchTxt(true);
+//				console.log( "聚焦" );
+//			}
+//			txt_1.onblur = function() {
+//				catchTxt(false);
+//				console.log( "失焦" );
+//			}
+//			
+			
+			txt_1.oninput = function(){
+				txt_2.value = this.value;
+			}
+			
+			//兼容处理
+			txt_1.onpropertychange = function(){
+				txt_2.value = this.value;
+			}
+			
+		</script>
+	</body>
+
+</html>

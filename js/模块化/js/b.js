@@ -6,5 +6,3 @@ define(function(require, exports, module){
 	
 	exports.curPage = curPage;
 });
-
-//var curPage = 1;

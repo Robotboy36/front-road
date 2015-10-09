@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>导航</title>
+		
+		<script type="text/javascript" src="http://api.map.baidu.com/api?v=1.5&ak=QmBhn61sLvLVrKZhG2UYGf1D&v=1.0"></script> 
+		<style>
+			html,body{ width:100%; height:100%; margin:0 ;padding:0;}
+			#map{
+				width:100%; height:100%;
+			}
+		</style>
+	</head>
+	<body>
+		
+		<div id="map"></div>
+		
+		<script>
+			//导航定位
+//			console.log( navigator.geolocation );
+
+			if( navigator.geolocation ){
+				
+				//获取当前位置
+				navigator.geolocation.getCurrentPosition( function( pos ){
+					
+					var coords = pos.coords;
+					
+//					console.log( "经度：" + coords.longitude );
+//					console.log( "纬度：" + coords.latitude );
+					var jd = coords.longitude; //112.883813;
+					var wd = coords.latitude; //28.213857;
+					
+					var map = new BMap.Map("map"); 
+					var point = new BMap.Point(jd, wd);
+					//设置中心点
+					map.centerAndZoom(point, 15);
+					
+					//创建标注
+					var marker = new BMap.Marker(point);      
+					map.addOverlay(marker);
+					//添加控件
+					map.addControl(new BMap.NavigationControl());    
+					map.addControl(new BMap.ScaleControl());    
+					map.addControl(new BMap.OverviewMapControl());    
+//					map.addControl(new BMap.MapTypeControl());    
+					
+					
+				}, function(err){   //出错时处理
+					
+					switch( err.code ){
+						
+						case err.PERMISSION_DENIED:
+							console.log( "用户" );
+							break;
+						case err.POSITION_UNAVAILABLE: 
+							console.log( "无法获取当前位置" );
+							break;
+						case err.TIMEOUT: 
+							console.log( "获取超时" );
+							break;
+						default:
+							console.log( "发生未知错误" );
+							break;
+					}
+				});
+				
+				
+			}
+
+			
+		</script>
+		
+		
+		
+	</body>
+</html>
